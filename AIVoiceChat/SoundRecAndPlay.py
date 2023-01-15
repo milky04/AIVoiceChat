@@ -21,12 +21,12 @@ def recsound(input_path, record_time):
                     input=True,
                     frames_per_buffer=CHUNK)
     
-    print("Recording ...")
+    print(record_time + "秒間録音します。何か話しかけてください。")
     frames = []
     for i in range(0, int(RATE / CHUNK * record_time)):
         data = stream.read(CHUNK)
         frames.append(data)
-    print("Done.")
+    print("録音が完了しました。")
     
     stream.stop_stream()
     stream.close()
